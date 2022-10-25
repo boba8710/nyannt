@@ -24,11 +24,11 @@ depending on the version of golang available in your package manager, you may ne
 
 then build for either 64 bit:
 
-`GOOS=amd64 go build .`
+`CGO_ENABLED=0 GOARCH=amd64 go build -ldflags="-s -w" -trimpath -buildvcs=false -o nyannt64 .`
 
 or 32 bit
 
-`GOOS=386 go build .`
+`CGO_ENABLED=0 GOARCH=386 go build -ldflags="-s -w" -trimpath -buildvcs=false -o nyannt32 .`
 
 Get the binary onto your machine, and make sure you execute it while your MBR is still clean! This means you should run it early in the competiton.
 
